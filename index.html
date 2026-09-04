@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support Kit Dokumentasjon</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>Support Kit Dokumentasjon</h1>
+
+  <!-- Søke- og filtergrensesnitt (Skjult frem til alt er lastet inn) -->
+  <div id="search-interface" class="search-container hidden">
+    <div class="filter-tags" id="tag-filters">
+      <button class="tag-btn active" data-tag="All">Alle Moduler</button>
+      <button class="tag-btn" data-tag="Managers">Managers</button>
+      <button class="tag-btn" data-tag="Researchers">Researchers</button>
+      <button class="tag-btn" data-tag="Trainers">Trainers</button>
+    </div>
+    <input type="text" id="search-box" placeholder="Søk i tekst etter filtervalg...">
+  </div>
+
+  <!-- Visuell Loading Spinner (Vises med en gang siden laster) -->
+  <div id="loading-spinner" class="loading-overlay">
+    <div class="spinner"></div>
+    <div>Henter og indekserer dokumenter, vennligst vent...</div>
+  </div>
+
+  <!-- Kontekstuelle søketreff -->
+  <div id="results-area" class="results-area">
+    <div id="results-count" class="results-title">Fant 0 treff</div>
+    <div id="snippets-container"></div>
+  </div>
+
+  <!-- Hovedbeholder for dokumentasjonsmoduler -->
+  <div id="modules-container"></div>
+
+  <!-- JavaScript-logikken lastes til slutt -->
+  <script src="app.js"></script>
+</body>
+</html>
