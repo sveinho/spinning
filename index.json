@@ -1,0 +1,5 @@
+[
+  { "id": "mod-1", "title": "Getting Started with Vanilla JavaScript", "tags": ["Managers", "Trainers"], "file": "module1.json" },
+  { "id": "mod-2", "title": "Understanding the DOM Engine", "tags": ["Researchers"], "file": "module2.json" },
+  { "id": "mod-3", "title": "Optimizing Client-Side Performance", "tags": ["Researchers", "Trainers"], "file": "module3.json" }
+]
