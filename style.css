@@ -1,0 +1,193 @@
+:root {
+  --primary: #2563eb;
+  --bg: #f8fafc;
+  --card-bg: #ffffff;
+  --text: #1e293b;
+  --border: #e2e8f0;
+  --highlight: #fde047;
+  --snippet-bg: #f1f5f9;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.search-container {
+  background: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  margin-bottom: 1.5rem;
+  position: sticky;
+  top: 1rem;
+  z-index: 10;
+}
+
+.filter-tags {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.tag-btn {
+  background: #f1f5f9;
+  border: 1px solid var(--border);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tag-btn.active {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  outline: none;
+}
+
+/* --- Lasteindikator / Spinner --- */
+.loading-overlay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid var(--border);
+  border-top: 4px solid var(--primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* --- Resultater og Moduler --- */
+.results-area {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  display: none;
+}
+
+.results-area.active {
+  display: block;
+}
+
+.results-title {
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: #64748b;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.5rem;
+}
+
+.snippet-item {
+  padding: 0.75rem;
+  border-radius: 6px;
+  background: var(--snippet-bg);
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+}
+
+.snippet-item:hover {
+  background: #e2e8f0;
+}
+
+.snippet-source {
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: var(--primary);
+  margin-bottom: 0.25rem;
+}
+
+.module {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  margin-bottom: 0.75rem;
+  overflow: hidden;
+  scroll-margin-top: 12rem;
+}
+
+.module-header {
+  width: 100%;
+  padding: 1rem;
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.module-badge-container {
+  margin-top: 0.5rem;
+  display: flex;
+  gap: 0.25rem;
+}
+
+.module-badge {
+  font-size: 0.75rem;
+  background: #e2e8f0;
+  padding: 0.1rem 0.5rem;
+  border-radius: 4px;
+  font-weight: normal;
+}
+
+.module-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+.module-content {
+  padding: 1rem;
+  line-height: 1.6;
+}
+
+.module.open .module-body {
+  max-height: 1000px;
+  border-top: 1px solid var(--border);
+}
+
+mark {
+  background-color: var(--highlight);
+  color: #000;
+}
